@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento InovaCampo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body style="text-align:center; font-family:Arial;">
+
+  <h1>Pagamento InovaCampo</h1>
+  <p>Escaneie o QR Code abaixo para acessar a página de pagamento:</p>
+
+  <div id="qrcode"></div>
+
+  <br><br>
+
+  <a href="https://seusite.com/PagementoInovaCampo.html">
+    <button style="padding:10px 20px; font-size:16px;">
+      Ir para pagamento
+    </button>
+  </a>
+
+  <script>
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://seusite.com/PagementoInovaCampo.html",
+      width: 250,
+      height: 250
+    });
+  </script>
+
+</body>
+</html>
