@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento InovaCampo</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px #ccc;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #2e7d32;
+    }
+
+    .qr {
+      margin: 20px 0;
+    }
+
+    button {
+      background: #2e7d32;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #1b5e20;
+    }
+
+    .pix-code {
+      background: #eee;
+      padding: 10px;
+      border-radius: 10px;
+      word-break: break-all;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Pagamento InovaCampo</h1>
+  <p>Escaneie o QR Code para pagar via PIX</p>
+
+  <!-- QR Code -->
+  <div class="qr">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=PIX123456789" alt="QR Code">
+  </div>
+
+  <p>Ou copie o código PIX:</p>
+
+  <div class="pix-code" id="pixCode">
+    PIX123456789
+  </div>
+
+  <br>
+
+  <button onclick="copiarPix()">📋 Copiar Código PIX</button>
+
+  <br><br>
+
+  <button onclick="confirmarPagamento()">✅ Já paguei</button>
+</div>
+
+<script>
+  function copiarPix() {
+    const texto = document.getElementById("pixCode").innerText;
+    navigator.clipboard.writeText(texto);
+    alert("Código PIX copiado!");
+  }
+
+  function confirmarPagamento() {
+    alert("Pagamento em verificação...");
+  }
+</script>
+
+</body>
+</html>
